@@ -1,0 +1,10 @@
+.feed {
+    flex: 1;  
+    padding:30px 150px ; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* go back to the 1:49 in the video  */
