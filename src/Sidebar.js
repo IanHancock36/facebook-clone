@@ -1,20 +1,28 @@
-import userEvent from '@testing-library/user-event';
-import React from 'react';
+import React from "react";
 import "./Sidebar.css";
-import SideBarRow from './SideBarRow'
+import SideBarRow from "./SideBarRow";
+import ChatIcon from "@material-ui/icons/Chat";
+import LocalHospitalIcon from "@material-ui/icons/LocalHospital";
+import VideoLibraryIcon from "@material-ui/icons/VideoLibrary";
+import EmojiflagsIcon from "@material-ui/icons/EmojiFlags";
+import PeopleIcon from "@material-ui/icons/People"
+import StorefrontIcon from "@material-ui/icons/Storefront"
+import ExpandMoreOutlined from "@material-ui/icons/ExpandMoreOutlined"
+
 function Sidebar() {
-    return (
-        <div className="sidebar" >
-          <SidebarRow src='https://www.google.com/url?sa=i&url=https%3A%2F%2Fiso.500px.com%2Fthe-top-20-nature-photos-on-500px-so-far-this-year%2F&psig=AOvVaw3hIbgj76lrYtrpxvWR7vZ1&ust=1613135194504000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMizo4Xz4e4CFQAAAAAdAAAAABAD' title="Ian Hancock" />
-          
-          
-           <SideBarRow title= 'Pages'/>
-           <SideBarRow title= 'Friends'/>
-           <SideBarRow title= 'Pages'/>
-           <SideBarRow title= 'Pages'/>
-           <SideBarRow title= 'Pages'/>
-        </div>
-    )
+  return (
+    <div className="sidebar">
+      <SidebarRow  src ="" title ="Ian" />
+      <SidebarRow  Icon = {LocalHospitalIcon} title ="COVID-19 Information Center" />
+      <SideBarRow  Icon = {EmojiflagsIcon} title="Pages" />
+      <SideBarRow Icon = {PeopleIcon} title="Friends" />
+      <SideBarRow Icon = {ChatIcon} title="Messenger" />
+      <SideBarRow Icon = {StorefrontIcon} title="Marketpkace" />
+      <SideBarRow Icon = {VideoLibraryIcon}title="Videos" />
+      <SideBarRow Icon = {ExpandMoreOutlined}title="Marketplace" />
+
+    </div>
+  );
 }
 
-export default Sidebar
+export default Sidebar;

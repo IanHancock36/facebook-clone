@@ -8,9 +8,12 @@ function SideBarRow({src,title,Icon}) {
             {src && <Avatar src ={src} />}
             {Icon && <Icon />}
             
-            <h4>{title} </h4>
+            <h4> {title} </h4>
         </div>
     )
 }
 
 export default SideBarRow
+
+
+// You can pass a component as a prop 
