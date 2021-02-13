@@ -9,12 +9,11 @@ function App() {
       
       <Header />
       <Sidebar />
+      <Feed /> 
         
         
         
-        
-        {/* App body  */}
-        {/* sidebar */}
+       
         {/* feed*/}
         {/* widget */}
         
