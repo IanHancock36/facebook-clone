@@ -5,6 +5,9 @@ import VideocamIcon from "@material-ui/icons/Videocam";
 import PhotoLibraryIcon from "@material-ui/icons/PhotoLibrary";
 import InsertEmtionIcon from "@material-ui/icons/InsertEmoticon";
 function MessageSender() {
+  const [input,setInput ] = useState('')
+  
+  
   const handleSubmit = (e) => {
     e.preventDefault();
   };
