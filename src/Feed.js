@@ -1,10 +1,16 @@
-import React from 'react'
+import React , {useState} from 'react'
 import './Feed.css'
 import StoryReel from './StoryReel'
 import MessageSender from './MessageSender';
 import Post from './Post'; 
+import db from "./firebase";
+
 
 function Feed() {
+const [post,setPosts] = useState([]); 
+
+
+
     return (
         <div className = "feed">
             <StoryReel />

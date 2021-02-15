@@ -8,11 +8,12 @@ import EmojiflagsIcon from "@material-ui/icons/EmojiFlags";
 import PeopleIcon from "@material-ui/icons/People"
 import StorefrontIcon from "@material-ui/icons/Storefront"
 import ExpandMoreOutlined from "@material-ui/icons/ExpandMoreOutlined"
-
+import {useStateValue} from "./StateProvider"
 function Sidebar() {
+  const [{user}, dispatch] = useStateValue();
   return (
     <div className="sidebar">
-      <SideBarRow  src ="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.jesuschristsavior.net%2FJesus.html&psig=AOvVaw3VDy5tA54Z5v78SiNoS5PC&ust=1613274401407000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCICEiM_55e4CFQAAAAAdAAAAABAD" title ="Ian Hancock" />
+      <SideBarRow  src ={user.photoURL}  title = {user.displayName} />
       <SideBarRow  Icon = {LocalHospitalIcon} title = "COVID-19 Information Center" />
       <SideBarRow  Icon = {EmojiflagsIcon} title="Pages" />
       <SideBarRow Icon = {PeopleIcon} title="Friends" />
