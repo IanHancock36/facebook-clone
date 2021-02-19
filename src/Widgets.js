@@ -8,7 +8,7 @@ function Widgets() {
            width ="340"
            style = {{border:"none",overflow:"hidden"}}
            scrolling="no"
-           allowTransparency="true"
+           allowtransparency="true"
            allow = "encrypted-media"
 
            >

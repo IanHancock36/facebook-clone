@@ -5,25 +5,29 @@ import Sidebar from './Sidebar';
 import Feed from './Feed'; 
 import Widgets from './Widgets'
 import Login from './Login'
-import {useStateValue} from "./StateProvider"; 
+import {useStateValue} from "./StateProvider";  
+
 
 function App() {
-  const [{user}, dispatch] = useStateValue();
+  const [{user},] = useStateValue();
   return (
+    // ? BEM naming convention 
     <div className="app">
-      {!user ? (<Login />) : (
- <>
- <Header />
- <div className="app__body"> 
- <Sidebar />
- <Feed /> 
- <Widgets />
- 
+      {!user ? (
+        <Login />
+      ) : (
+          <>
+            <Header />
 
- </div>
- </>
-      )}
+            <div className='app__body'>
+              <Sidebar />
+              <Feed />
+              <Widgets />
+            </div>
+          </>
+        )}
     </div>
+
   );
 }
 

@@ -1,11 +1,13 @@
 import React, {useState} from "react";
 import { Avatar } from "@material-ui/core";
 import "./MessageSender.css";
-
+import db from "./firebase";
+import firebase from "firebase"; 
 import VideocamIcon from "@material-ui/icons/Videocam";
 import PhotoLibraryIcon from "@material-ui/icons/PhotoLibrary";
-import InsertEmtionIcon from "@material-ui/icons/InsertEmoticon";
+import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 import {useStateValue} from "./StateProvider"
+
 function MessageSender() {
   const [{user}, dispatch] = useStateValue();
   const [input,setInput ] = useState("")
@@ -14,9 +16,17 @@ function MessageSender() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+  db.collection('posts').add({
+   message: input,
+   timestamp: firebase.firestore.FieldValue.serverTimestamp(), 
+  profilePic : user.photoURL,
+  username: user.displayName,
+  image: imageUrl 
  
- setInput("");
- setImageUrl(""); 
+  })
+ 
+ setInput(" ");
+ setImageUrl(" "); 
 };
 
   return (
@@ -50,7 +60,7 @@ function MessageSender() {
             <h3>Photo/Video</h3>
         </div>
         <div className="messageSender__option">
-            <InsertEmtionIcon style = {{color: "orange"}} />
+            < InsertEmoticonIcon style = {{color: "orange"}} />
             <h3>Feeling/Activity</h3>
         </div>
       </div>
